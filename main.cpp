@@ -1,64 +1,81 @@
 #include "Engenheiro.cpp"
 #include "Vendedor.cpp"
+#define quantEng 3
+#define quantVend 3
 
-int main() {
+int main ()
+{
+  
+  Engenheiro *eng = new Engenheiro [quantEng];
+  
+  //inserindo os dados do eng 1
+  
+  eng[0].nome = "Joao Snow";
+  eng[0].salarioHora = 35;
+  eng[0].projetos = 3;
+  eng[0].horasDeTrabalho = 9.5;
 
-  Engenheiro eng1;
-  eng1.nome = "Joao Snow";
-  eng1.salarioHora = 35;
-  eng1.projetos = 3; 
-  std::cout << "Nome: " << eng1.nome << std::endl;
-  std::cout << "Salario Mes: " << eng1.pagamentoMes(9.5) << std::endl;
-  std::cout << "Projetos: " << eng1.projetos << std::endl;
-  std::cout << std::endl;
+  //inserindo os dados do eng 2
   
-  Engenheiro eng2;
-  eng2.nome = "Daniela Targaryen";
-  eng2.salarioHora = 30;
-  eng2.projetos = 1; 
-  std::cout << "Nome: " << eng2.nome << std::endl;
-  std::cout << "Salario Mes: " << eng2.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng2.projetos << std::endl;  
-  std::cout << std::endl;
+  eng[1].nome = "Daniela Targaryen";
+  eng[1].salarioHora = 30;
+  eng[1].projetos = 1;
+  eng[1].horasDeTrabalho = 8;
   
-  Engenheiro eng3;
-  eng3.nome = "Bruno Stark";
-  eng3.salarioHora = 30;
-  eng3.projetos = 2; 
-  std::cout << "Nome: " << eng3.nome << std::endl;
-  std::cout << "Salario Mes: " << eng3.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng3.projetos << std::endl;  
-  std::cout << std::endl;
+  //inserindo os dados do eng 3
   
+  eng[2].nome = "Bruno Stark";
+  eng[2].salarioHora = 30;
+  eng[2].projetos = 2;
+  eng[2].horasDeTrabalho = 8;
   
-  Vendedor vend1;
-  vend1.nome = "Tonho Lannister";
-  vend1.salarioHora = 20;
-  vend1.quotaMensalVendas = 5000;
+  //printando dados dos Engenheiros
   
-  std::cout << "Nome: " << vend1.nome << std::endl;
-  std::cout << "Salario Mes: " << vend1.pagamentoMes(6) << std::endl;  
-  std::cout << "Quota vendas: " << vend1.quotaTotalAnual() << std::endl;
-  std::cout << std::endl;
+  int i=0;
+  while(i < quantEng)
+  {
+        std::cout << "Nome: " << eng[i].nome << std::endl;
+        std::cout << "Salario Mes: " << eng[i].pagamentoMes (eng[i].horasDeTrabalho) << std::endl;
+        std::cout << "Projetos: " << eng[i].projetos << std::endl;
+        std::cout << std::endl;
+        i++;
+  }
   
-  Vendedor vend2;
-  vend2.nome = "Jose Mormont";
-  vend2.salarioHora = 25;
-  vend2.quotaMensalVendas = 3000;
+  //inserindo os dados dos vendedores
+   
+  //inserindo os dados do vend 1
+ 
+  Vendedor *vend = new Vendedor[quantVend];
+  vend[0].nome = "Tonho Lannister";
+  vend[0].salarioHora = 20;
+  vend[0].quotaMensalVendas = 5000;
+  vend[0].horasDeTrabalho = 6;
+
+  //inserindo os dados do vend 2
   
-  std::cout << "Nome: " << vend2.nome << std::endl;
-  std::cout << "Salario Mes: " << vend2.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend2.quotaTotalAnual() << std::endl; 
-  std::cout << std::endl;  
-	
-  Vendedor vend3;
-  vend3.nome = "Sonia Stark";
-  vend3.salarioHora = 30;
-  vend3.quotaMensalVendas = 4000;
+  vend[1].nome = "Jose Mormont";
+  vend[1].salarioHora = 25;
+  vend[1].quotaMensalVendas = 3000;
+  vend[1].horasDeTrabalho = 8;
   
-  std::cout << "Nome: " << vend3.nome << std::endl;
-  std::cout << "Salario Mes: " << vend3.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend3.quotaTotalAnual() << std::endl;  
+  //inserindo os dados do vend 3
   
-  return 0;	
+  vend[2].nome = "Sonia Stark";
+  vend[2].salarioHora = 30;
+  vend[2].quotaMensalVendas = 4000;
+  vend[2].horasDeTrabalho = 8;
+  
+  //printando dados dos Vendedores
+  
+  i=0;
+  while(i < quantVend)
+  {
+        std::cout << "Nome: " << vend[i].nome << std::endl;
+        std::cout << "Salario Mes: " << vend[i].pagamentoMes (vend[i].horasDeTrabalho) << std::endl;
+        std::cout << "Quota vendas: " << vend[i].quotaVendaAnual() << std::endl;
+        std::cout << std::endl;
+        i++;
+  }
+
+  return 0;
 }
