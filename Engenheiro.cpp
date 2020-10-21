@@ -1,11 +1,11 @@
 #include <string>
 #include "Empregado.hpp"
 
-class Engenheiro : public Empregado {
+class Engenheiro:public Empregado
+{
+public:
 
-  public:
-    std::string nome;  
-	int projetos;
-	
+  int projetos;
+
 };
 
